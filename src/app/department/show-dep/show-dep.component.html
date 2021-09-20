@@ -1,0 +1,32 @@
+<div style="overflow: auto;">
+    <div class="mat-elevation-z8">
+
+        <mat-table [dataSouce] = "listData">
+            <mat-header-row *matRowDef="displayColumns" ></mat-header-row>
+            <mat-row *matRowDef= "let row; columns:displayColumns"></mat-row>
+
+            <ng-container matColumnDef="Options">
+            <mat-header-cell *matHeaderCellDef>Options</mat-header-cell>
+            <mat-cell *matCellDef="let row">
+                <button mat-icon-button (click) = "onEdit(row)">
+                    <mat-icon>lunch</mat-icon>
+                </button>
+                <button mat-icon-button color="warn" (click)="onDelete(row.DepartmentId)">
+                    <mat-icon>delete_outline</mat-icon>
+                </button>
+            </mat-cell>
+            </ng-container >
+            <ng-container matCoulmnDef = "DepartmentId">
+                <mat-header-cell *matHeaderCellDef>DepartmentId</mat-header-cell>
+                <mat-header-cell *matCellDef="let element">{{element.DepartmentId}}</mat-header-cell>
+            </ng-container>
+            <ng-container matCoulmnDef = "DepartmentName">
+                <mat-header-cell *matHeaderCellDef>DepartmentName</mat-header-cell>
+                <mat-header-cell *matCellDef="let element">{{element.DepartmentName}}</mat-header-cell>
+            </ng-container>
+         </mat-table>
+            
+    </div>
+</div>
+
+
