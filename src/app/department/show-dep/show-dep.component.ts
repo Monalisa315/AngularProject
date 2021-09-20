@@ -12,6 +12,7 @@ export class ShowDepComponent implements OnInit {
 
   listData!: MatTableDataSource<any>;
   displayColumns: string[] = ['Options','DepartmentId','DepartmentName']
+ 
   ngOnInit(): void {
     this.refreshDepList();
     
@@ -27,6 +28,8 @@ export class ShowDepComponent implements OnInit {
   }
   onDelete(id:number){
     console.log(id)
+    console.log("Hello")
+    console.log("Hello1")
   }
 
   
